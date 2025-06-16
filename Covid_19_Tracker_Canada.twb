@@ -1,0 +1,2094 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0520.1026                               -->
+<workbook original-version='18.1' source-build='2025.1.2 (20251.25.0520.1026)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+        <calculation class='tableau' formula='&quot;Deaths&quot;' />
+        <members>
+          <member value='&quot;Cases&quot;' />
+          <member value='&quot;Deaths&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='in (covid19-download)' inline='true' name='federated.0redus918kvllf16jjlwb1lxsl7p' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='covid19-download' name='excel-direct.0fxmgoc1517jev1evq2ab0thqj0o'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/HP/Downloads/covid19-download.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0fxmgoc1517jev1evq2ab0thqj0o' name='in' table='[in$]' type='table'>
+          <columns gridOrigin='A1:J2341:no:A1:J2341:0' header='yes' outcome='2'>
+            <column datatype='string' name='prname' ordinal='0' />
+            <column datatype='date' name='date' ordinal='1' />
+            <column datatype='integer' name='reporting_week' ordinal='2' />
+            <column datatype='integer' name='reporting_year' ordinal='3' />
+            <column datatype='integer' name='totalcases' ordinal='4' />
+            <column datatype='integer' name='numtotal_last7' ordinal='5' />
+            <column datatype='integer' name='numdeaths' ordinal='6' />
+            <column datatype='integer' name='numdeaths_last7' ordinal='7' />
+            <column datatype='integer' name='numtotal_last14' ordinal='8' />
+            <column datatype='integer' name='numdeaths_last14' ordinal='9' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[in]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:J2341:no:A1:J2341:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prname</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[prname]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>prname</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reporting_week</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[reporting_week]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>reporting_week</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reporting_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[reporting_year]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>reporting_year</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>totalcases</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[totalcases]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>totalcases</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>numtotal_last7</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[numtotal_last7]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>numtotal_last7</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>numdeaths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[numdeaths]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>numdeaths</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>numdeaths_last7</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[numdeaths_last7]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>numdeaths_last7</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>numtotal_last14</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[numtotal_last14]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>numtotal_last14</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>numdeaths_last14</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[numdeaths_last14]</local-name>
+            <parent-name>[in]</parent-name>
+            <remote-alias>numdeaths_last14</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Latest Results' datatype='boolean' name='[Calculation_2210423013187854336]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+        <calculation class='tableau' formula='[date] = {FIXED : MAX([date])}' />
+      </column>
+      <column caption='Cases or Deaths' datatype='string' name='[Calculation_2210423013191348226]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+      </column>
+      <column caption='Blank' datatype='string' name='[Calculation_2210423013195890692]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&apos;&apos;' />
+      </column>
+      <column caption='All canada' datatype='string' name='[Calculation_2210423013208866821]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF COUNTD([prname]) &gt; 1&#13;&#10;THEN &quot;of Canada&quot;&#13;&#10;ELSE&quot;&quot;&#13;&#10;END' />
+      </column>
+      <column caption='in' datatype='table' name='[__tableau_internal_object_id__].[in_8C84E810873446C3B178326ECF52485A]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Total Deaths' datatype='integer' name='[numdeaths]' role='measure' type='quantitative' />
+      <column caption='Numdeaths Last14' datatype='integer' name='[numdeaths_last14]' role='measure' type='quantitative' />
+      <column caption='Total Deaths Last - 7Days' datatype='integer' name='[numdeaths_last7]' role='measure' type='quantitative' />
+      <column caption='Numtotal Last14' datatype='integer' name='[numtotal_last14]' role='measure' type='quantitative' />
+      <column caption='Total Cases  Last - 7 Days' datatype='integer' name='[numtotal_last7]' role='measure' type='quantitative' />
+      <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Reporting Week' datatype='integer' name='[reporting_week]' role='dimension' type='quantitative' />
+      <column caption='Reporting Year' datatype='integer' name='[reporting_year]' role='dimension' type='quantitative' />
+      <column caption='Total Cases' datatype='integer' name='[totalcases]' role='measure' type='quantitative' />
+      <group caption='Region Set' name='[Region Set]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+          <groupfilter function='level-members' level='[prname]' />
+          <groupfilter function='union'>
+            <groupfilter function='member' level='[prname]' member='&quot;Canada&quot;' />
+            <groupfilter function='member' level='[prname]' member='&quot;Repatriated travellers&quot;' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_0zdb3c90kux6oh1h9pccj01rjlcb.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='06/15/2025 08:50:45 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>prname</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[prname]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>prname</remote-alias>
+              <ordinal>0</ordinal>
+              <family>in</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>in</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>156</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reporting_week</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[reporting_week]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>reporting_week</remote-alias>
+              <ordinal>2</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>53</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reporting_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[reporting_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>reporting_year</remote-alias>
+              <ordinal>3</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>totalcases</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[totalcases]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>totalcases</remote-alias>
+              <ordinal>4</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1297</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>numtotal_last7</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[numtotal_last7]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>numtotal_last7</remote-alias>
+              <ordinal>5</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>940</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>numdeaths</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[numdeaths]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>numdeaths</remote-alias>
+              <ordinal>6</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>875</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>numdeaths_last7</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[numdeaths_last7]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>numdeaths_last7</remote-alias>
+              <ordinal>7</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>228</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>numtotal_last14</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[numtotal_last14]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>numtotal_last14</remote-alias>
+              <ordinal>8</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1077</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>numdeaths_last14</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[numdeaths_last14]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>numdeaths_last14</remote-alias>
+              <ordinal>9</ordinal>
+              <family>in</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>318</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[in_8C84E810873446C3B178326ECF52485A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='%null%' />
+        <semantic-value key='[State].[Name]' value='%null%' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+          <calculation class='tableau' formula='&quot;Deaths&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='in' id='in_8C84E810873446C3B178326ECF52485A'>
+            <properties context=''>
+              <relation connection='excel-direct.0fxmgoc1517jev1evq2ab0thqj0o' name='in' table='[in$]' type='table'>
+                <columns gridOrigin='A1:J2341:no:A1:J2341:0' header='yes' outcome='2'>
+                  <column datatype='string' name='prname' ordinal='0' />
+                  <column datatype='date' name='date' ordinal='1' />
+                  <column datatype='integer' name='reporting_week' ordinal='2' />
+                  <column datatype='integer' name='reporting_year' ordinal='3' />
+                  <column datatype='integer' name='totalcases' ordinal='4' />
+                  <column datatype='integer' name='numtotal_last7' ordinal='5' />
+                  <column datatype='integer' name='numdeaths' ordinal='6' />
+                  <column datatype='integer' name='numdeaths_last7' ordinal='7' />
+                  <column datatype='integer' name='numtotal_last14' ordinal='8' />
+                  <column datatype='integer' name='numdeaths_last14' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Banner'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Latest Results' datatype='boolean' name='[Calculation_2210423013187854336]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+              <calculation class='tableau' formula='[date] = {FIXED : MAX([date])}' />
+            </column>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_2210423013187854336]' derivation='None' name='[none:Calculation_2210423013187854336:nk]' pivot='key' type='nominal' />
+            <column caption='Total Deaths' datatype='integer' name='[numdeaths]' role='measure' type='quantitative' />
+            <column caption='Total Deaths Last - 7Days' datatype='integer' name='[numdeaths_last7]' role='measure' type='quantitative' />
+            <column caption='Total Cases  Last - 7 Days' datatype='integer' name='[numtotal_last7]' role='measure' type='quantitative' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[numdeaths]' derivation='Sum' name='[sum:numdeaths:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[numdeaths_last7]' derivation='Sum' name='[sum:numdeaths_last7:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[numtotal_last7]' derivation='Sum' name='[sum:numtotal_last7:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[totalcases]' derivation='Sum' name='[sum:totalcases:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Cases' datatype='integer' name='[totalcases]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numtotal_last7:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths_last7:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numtotal_last7:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths_last7:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' filter-group='3'>
+            <groupfilter function='level-members' level='[prname]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013187854336:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#333333' />
+            <format attr='band-size' scope='rows' value='1' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Multiple Values]' />
+              <text column='[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#ffffff' fontsize='26'><![CDATA[<[federated.0redus918kvllf16jjlwb1lxsl7p].[Multiple Values]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#ffffff'><![CDATA[<[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{22AC7034-42D6-4BFA-B242-9C4A512F74FD}' />
+    </worksheet>
+    <worksheet name='Column - Cases'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+              <calculation class='tableau' formula='&quot;Deaths&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Latest Results' datatype='boolean' name='[Calculation_2210423013187854336]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+              <calculation class='tableau' formula='[date] = {FIXED : MAX([date])}' />
+            </column>
+            <column caption='Cases or Deaths' datatype='string' name='[Calculation_2210423013191348226]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_2210423013187854336]' derivation='None' name='[none:Calculation_2210423013187854336:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2210423013191348226]' derivation='None' name='[none:Calculation_2210423013191348226:nk]' pivot='key' type='nominal' />
+            <column-instance column='[prname]' derivation='None' name='[none:prname:nk]' pivot='key' type='nominal' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[totalcases]' derivation='Sum' name='[sum:totalcases:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Cases' datatype='integer' name='[totalcases]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' />
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013187854336:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013191348226:nk]' member='&quot;Cases&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='false' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</rows>
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]</cols>
+      </table>
+      <simple-id uuid='{000E1E79-2CCA-445C-9046-8AB2C77352B9}' />
+    </worksheet>
+    <worksheet name='Column - Deaths'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+              <calculation class='tableau' formula='&quot;Deaths&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Latest Results' datatype='boolean' name='[Calculation_2210423013187854336]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+              <calculation class='tableau' formula='[date] = {FIXED : MAX([date])}' />
+            </column>
+            <column caption='Cases or Deaths' datatype='string' name='[Calculation_2210423013191348226]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_2210423013187854336]' derivation='None' name='[none:Calculation_2210423013187854336:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2210423013191348226]' derivation='None' name='[none:Calculation_2210423013191348226:nk]' pivot='key' type='nominal' />
+            <column-instance column='[prname]' derivation='None' name='[none:prname:nk]' pivot='key' type='nominal' />
+            <column caption='Total Deaths' datatype='integer' name='[numdeaths]' role='measure' type='quantitative' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[numdeaths]' derivation='Sum' name='[sum:numdeaths:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' />
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013187854336:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013191348226:nk]' member='&quot;Deaths&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='false' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-color' value='#ff9d9a' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</rows>
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;British Columbia&quot;</value>
+                <value>5061</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Saskatchewan&quot;</value>
+                <value>1826</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Nova Scotia&quot;</value>
+                <value>715</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='3' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Prince Edward Island&quot;</value>
+                <value>85</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Yukon&quot;</value>
+                <value>32</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Northwest Territories&quot;</value>
+                <value>22</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]</field>
+                  <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Nunavut&quot;</value>
+                <value>7</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{EA198394-B8CD-41AB-883E-1DDE177F988C}' />
+    </worksheet>
+    <worksheet name='Footer'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='2' fontsize='8' italic='true'>Datasource : &lt;</run>
+            <run fontalignment='2' fontsize='8' italic='true'>Data Connection Name</run>
+            <run fontalignment='2' fontsize='8' italic='true'>&gt; as of &lt;Data Update Time&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Blank' datatype='string' name='[Calculation_2210423013195890692]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column-instance column='[Calculation_2210423013195890692]' derivation='None' name='[none:Calculation_2210423013195890692:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013195890692:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{069B8F80-41BE-4A85-B407-5CAB140080D2}' />
+    </worksheet>
+    <worksheet name='Line - Cases'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='10'>Total Cases</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[totalcases]' derivation='Sum' name='[sum:totalcases:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Cases' datatype='integer' name='[totalcases]' role='measure' type='quantitative' />
+            <column-instance column='[date]' derivation='Week-Trunc' name='[twk:date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' filter-group='3'>
+            <groupfilter function='level-members' level='[prname]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]' scope='rows' value='' />
+            <format attr='title' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[twk:date:qk]' scope='cols' value='' />
+            <format attr='display' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#4e79a7' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]</rows>
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[twk:date:qk]</cols>
+      </table>
+      <simple-id uuid='{4D15C94D-2A21-47DC-92EF-E91CFE528B47}' />
+    </worksheet>
+    <worksheet name='Line - Deaths'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='10'>Total Deaths</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Total Deaths' datatype='integer' name='[numdeaths]' role='measure' type='quantitative' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[numdeaths]' derivation='Sum' name='[sum:numdeaths:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Week-Trunc' name='[twk:date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' filter-group='3'>
+            <groupfilter function='level-members' level='[prname]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' scope='rows' value='' />
+            <format attr='title' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[twk:date:qk]' scope='cols' value='' />
+            <format attr='display' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#ff9d9a' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]</rows>
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[twk:date:qk]</cols>
+      </table>
+      <simple-id uuid='{EECA4DE8-3D0F-45D4-9F4C-383812904C5F}' />
+    </worksheet>
+    <worksheet name='Map - Cases'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+              <calculation class='tableau' formula='&quot;Deaths&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Latest Results' datatype='boolean' name='[Calculation_2210423013187854336]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+              <calculation class='tableau' formula='[date] = {FIXED : MAX([date])}' />
+            </column>
+            <column caption='Cases or Deaths' datatype='string' name='[Calculation_2210423013191348226]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_2210423013187854336]' derivation='None' name='[none:Calculation_2210423013187854336:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2210423013191348226]' derivation='None' name='[none:Calculation_2210423013191348226:nk]' pivot='key' type='nominal' />
+            <column-instance column='[prname]' derivation='None' name='[none:prname:nk]' pivot='key' type='nominal' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[totalcases]' derivation='Sum' name='[sum:totalcases:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Cases' datatype='integer' name='[totalcases]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' filter-group='3'>
+            <groupfilter function='level-members' level='[prname]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013187854336:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013191348226:nk]' member='&quot;Cases&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='false' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]' />
+              <size column='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='5.7254762649536133' />
+                <format attr='mark-transparency' value='155' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0redus918kvllf16jjlwb1lxsl7p].[Latitude (generated)]</rows>
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{128ED143-690C-49CB-B413-71D7FC598C62}' />
+    </worksheet>
+    <worksheet name='Map - Deaths'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+              <calculation class='tableau' formula='&quot;Deaths&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='Latest Results' datatype='boolean' name='[Calculation_2210423013187854336]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+              <calculation class='tableau' formula='[date] = {FIXED : MAX([date])}' />
+            </column>
+            <column caption='Cases or Deaths' datatype='string' name='[Calculation_2210423013191348226]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_2210423013187854336]' derivation='None' name='[none:Calculation_2210423013187854336:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2210423013191348226]' derivation='None' name='[none:Calculation_2210423013191348226:nk]' pivot='key' type='nominal' />
+            <column-instance column='[prname]' derivation='None' name='[none:prname:nk]' pivot='key' type='nominal' />
+            <column caption='Total Deaths' datatype='integer' name='[numdeaths]' role='measure' type='quantitative' />
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[numdeaths]' derivation='Sum' name='[sum:numdeaths:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' filter-group='3'>
+            <groupfilter function='level-members' level='[prname]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013187854336:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2210423013191348226:nk]' member='&quot;Deaths&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='false' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013187854336:nk]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[none:Calculation_2210423013191348226:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[Longitude (generated)]' field-type='quantitative' max='-6085770.7141193543' min='-17189735.068351008' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0redus918kvllf16jjlwb1lxsl7p].[Latitude (generated)]' field-type='quantitative' max='10728801.924674518' min='4491562.3381386288' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0redus918kvllf16jjlwb1lxsl7p].[none:prname:nk]' />
+              <size column='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='5.7254762649536133' />
+                <format attr='mark-transparency' value='155' />
+                <format attr='mark-color' value='#ff9d9a' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0redus918kvllf16jjlwb1lxsl7p].[Latitude (generated)]</rows>
+        <cols>[federated.0redus918kvllf16jjlwb1lxsl7p].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{5DF3AEEC-1AB2-44B8-AED6-49CD6A9C8F35}' />
+    </worksheet>
+    <worksheet name='Results'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='13'>Results: Total </run>
+            <run bold='true' fontcolor='#e15759' fontsize='13'>&lt;[Parameters].[Parameter 1]&gt;</run>
+            <run bold='true' fontsize='13'><![CDATA[ for <[federated.0redus918kvllf16jjlwb1lxsl7p].[prname]> <[federated.0redus918kvllf16jjlwb1lxsl7p].[usr:Calculation_2210423013208866821:nk]>]]></run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+              <calculation class='tableau' formula='&quot;Deaths&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p'>
+            <column caption='All canada' datatype='string' name='[Calculation_2210423013208866821]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF COUNTD([prname]) &gt; 1&#13;&#10;THEN &quot;of Canada&quot;&#13;&#10;ELSE&quot;&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Region' datatype='string' name='[prname]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Calculation_2210423013208866821]' derivation='User' name='[usr:Calculation_2210423013208866821:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' filter-group='3'>
+            <groupfilter function='level-members' level='[prname]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]' />
+              <lod column='[federated.0redus918kvllf16jjlwb1lxsl7p].[usr:Calculation_2210423013208866821:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+                <format attr='mark-transparency' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F5AB978B-25C4-48CF-9129-19D91408F7D1}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Covid Tracker'>
+      <style />
+      <size maxheight='860' maxwidth='1600' minheight='620' minwidth='1100' sizing-mode='range' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='in (covid19-download)' name='federated.0redus918kvllf16jjlwb1lxsl7p' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Cases or Deaths' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Deaths&quot;'>
+          <calculation class='tableau' formula='&quot;Deaths&quot;' />
+          <members>
+            <member value='&quot;Cases&quot;' />
+            <member value='&quot;Deaths&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.0redus918kvllf16jjlwb1lxsl7p' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='87315' id='39' param='vert' type-v2='layout-flow' w='99000' x='500' y='11700'>
+            <zone h='87315' id='35' type-v2='layout-basic' w='99000' x='500' y='11700'>
+              <zone h='87315' id='29' param='vert' type-v2='layout-flow' w='99000' x='500' y='11700'>
+                <zone h='87315' id='27' type-v2='layout-basic' w='99000' x='500' y='11700'>
+                  <zone h='56122' id='7' param='horz' type-v2='layout-flow' w='50187' x='23063' y='38715'>
+                    <zone fixed-size='793' h='56122' id='3' is-fixed='true' param='vert' type-v2='layout-flow' w='50187' x='23063' y='38715'>
+                      <zone h='123' id='5' name='Map - Cases' show-title='false' w='50187' x='23063' y='38715'>
+                        <layout-cache has-max-size-h='true' maxheight='1' minheight='1' minwidth='201' type-h='scalable' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='55999' id='10' name='Map - Deaths' show-title='false' w='50187' x='23063' y='38838'>
+                        <layout-cache has-max-size-w='true' maxwidth='1' minheight='201' minwidth='1' type-h='scalable' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone h='56122' id='14' param='vert' type-v2='layout-flow' w='22563' x='500' y='38715'>
+                    <zone fixed-size='191' h='24507' id='15' is-fixed='true' name='Line - Cases' w='22563' x='500' y='38715'>
+                      <layout-cache minheight='169' type-h='scalable' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='31615' id='17' name='Line - Deaths' w='22563' x='500' y='63222'>
+                      <layout-cache minheight='169' type-h='scalable' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='19345' id='18' name='Banner' show-title='false' w='99000' x='500' y='11700'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='0' />
+                    </zone-style>
+                  </zone>
+                  <zone h='7670' id='22' is-fixed='true' type-v2='layout-basic' w='99000' x='500' y='31045'>
+                    <zone h='7670' id='19' param='horz' type-v2='layout-flow' w='72750' x='500' y='31045'>
+                      <zone fixed-size='656' h='7670' id='20' is-fixed='true' name='Results' w='72750' x='500' y='31045'>
+                        <layout-cache type-h='cell' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone h='7670' id='23' param='horz' type-v2='layout-flow' w='26250' x='73250' y='31045'>
+                      <zone fixed-size='217' h='7670' id='16' is-fixed='true' mode='dropdown' name='Line - Cases' param='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' type-v2='filter' w='14063' x='73250' y='31045'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='7670' id='9' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='12187' x='87313' y='31045'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone h='56122' id='32' is-fixed='true' type-v2='layout-basic' w='26250' x='73250' y='38715'>
+                    <zone h='56122' id='33' param='vert' type-v2='layout-flow' w='26250' x='73250' y='38715'>
+                      <zone fixed-size='390' h='49015' id='24' is-fixed='true' name='Column - Cases' show-title='false' w='26250' x='73250' y='38715'>
+                        <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='fixed' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone h='4178' id='26' name='Footer' w='99000' x='500' y='94837'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='10715' id='42' type-v2='text' w='99000' x='500' y='985'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='20'>Canada </run>
+              <run bold='true' fontalignment='1' fontcolor='#e15759' fontsize='20'>Covid 19 </run>
+              <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='20'>Tracker</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run bold='true' fontalignment='1' fontcolor='#f5f5f5' fontsize='10'>Jan 1.2020 to Jan 21.2020</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+              <format attr='background-color' value='#000000' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='203' h='52094' id='34' is-fixed='true' name='Column - Deaths' show-title='false' w='26250' x='73438' y='42365'>
+          <layout-cache type-h='cell' type-w='fixed' />
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='2150' minheight='2150' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='44' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98030' id='43' param='vert' type-v2='layout-flow' w='99000' x='500' y='985'>
+                <zone forceUpdate='true' h='10715' id='42' type-v2='text' w='99000' x='500' y='985'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='20'>Canada </run>
+                    <run bold='true' fontalignment='1' fontcolor='#e15759' fontsize='20'>Covid 19 </run>
+                    <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='20'>Tracker</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run bold='true' fontalignment='1' fontcolor='#f5f5f5' fontsize='10'>Jan 1.2020 to Jan 21.2020</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#000000' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='166' h='19345' id='18' is-fixed='true' name='Banner' show-title='false' w='99000' x='500' y='11700'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='58' h='7670' id='20' is-fixed='true' name='Results' w='72750' x='500' y='31045'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7670' id='9' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='12187' x='87313' y='31045'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='217' h='7670' id='16' mode='dropdown' name='Line - Cases' param='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' type-v2='filter' w='14063' x='73250' y='31045'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='203' h='24507' id='15' is-fixed='true' name='Line - Cases' w='22563' x='500' y='38715'>
+                  <layout-cache minheight='169' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='123' id='5' is-fixed='true' name='Map - Cases' show-title='false' w='50187' x='23063' y='38715'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' minwidth='201' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49015' id='24' is-fixed='true' name='Column - Cases' show-title='false' w='26250' x='73250' y='38715'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='55999' id='10' is-fixed='true' name='Map - Deaths' show-title='false' w='50187' x='23063' y='38838'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minheight='201' minwidth='1' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='52094' id='34' is-fixed='true' name='Column - Deaths' show-title='false' w='26250' x='73438' y='42365'>
+                  <layout-cache type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='264' h='31615' id='17' is-fixed='true' name='Line - Deaths' w='22563' x='500' y='63222'>
+                  <layout-cache minheight='169' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='28' h='4178' id='26' is-fixed='true' name='Footer' w='99000' x='500' y='94837'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{0625520D-BFD5-484C-AB6A-E28E98848B00}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Column - Cases'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F3588E39-A958-4464-837F-34964DBFC46A}' />
+    </window>
+    <window class='worksheet' name='Column - Deaths'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{466752E4-398A-4FE9-AB4B-201F76371FD1}' />
+    </window>
+    <window class='worksheet' name='Map - Cases'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:totalcases:qk]' type='size' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5617D78F-4080-4497-9C3B-6E2335086C77}' />
+    </window>
+    <window class='worksheet' name='Map - Deaths'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]' type='size' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{06FA1F98-FBE7-4D6E-9CC7-A1168457221B}' />
+    </window>
+    <window class='worksheet' name='Line - Cases'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C6486D9E-022E-424C-8CF3-5FFF54F32918}' />
+    </window>
+    <window class='worksheet' name='Line - Deaths'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0redus918kvllf16jjlwb1lxsl7p].[Region Set]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F297DBA7-4693-408E-B2A8-86159E535C90}' />
+    </window>
+    <window class='worksheet' name='Banner'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{ED38602A-B58A-4AC8-8751-B57B565B772D}' />
+    </window>
+    <window class='worksheet' name='Results'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DF28D154-F94B-4F0E-A762-DD814EA4A7A6}' />
+    </window>
+    <window class='worksheet' name='Footer'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1AE8FCE-D21D-43A2-B8B6-E5CF96EB0976}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Covid Tracker'>
+      <viewpoints>
+        <viewpoint name='Banner'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]</field>
+                    </x-fields>
+                    <y-fields />
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[:Measure Names]</field>
+                    <field>[federated.0redus918kvllf16jjlwb1lxsl7p].[Multiple Values]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>&quot;[federated.0redus918kvllf16jjlwb1lxsl7p].[sum:numdeaths:qk]&quot;</value>
+                  <value>50381.0</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+        </viewpoint>
+        <viewpoint name='Column - Cases' />
+        <viewpoint name='Column - Deaths'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Footer'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Line - Cases'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Line - Deaths'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Map - Cases'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Map - Deaths'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Results'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{91AE8209-8E11-45E8-AE7A-606E729E4282}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Covid Tracker' width='192'>
+      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
+      MhbUBkZ1NgAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
